@@ -1,0 +1,16 @@
+{
+  "short_name": "Analiz Yayınları",
+  "name": "Analiz Yayınları",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "https://doneweb.s3.eu-central-1.amazonaws.com/project/project-7/favicon.ico",
+      "sizes": "1024x1024 512x512 256x256 128x128 64x64 32x32 24x24 16x16",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

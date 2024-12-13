@@ -1,0 +1,15 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Bayiler{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h2>Bayiler</h2>
+    {% for ogrenci in ogrenciler %}
+      <div>
+        {{ ogrenci.ogrenci_no }} - {{ ogrenci.isim }} ({{ ogrenci.dogum_tarihi }})
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
+

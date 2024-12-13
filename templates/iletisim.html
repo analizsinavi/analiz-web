@@ -1,0 +1,76 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}İletişim{% endblock %}
+
+{% block content %}
+
+  <!-- İletişim Bilgilerimiz Bölümü -->
+  <section class="text-dark dark:text-white">
+    <div>
+      <div class="container py-5">
+        <div class="text-center">
+          <h1 class="mb-4 display-4 fw-bold">İletişim Bilgilerimiz</h1>
+          <p class="mb-4 fs-5 text-secondary">
+            Bizi arayın, bize yazın veya ofisimize uğrayın! İletişim bilgilerimiz aşağıda yer almaktadır. Herhangi bir
+            sorunuz veya talebiniz varsa, size yardımcı olmaktan mutluluk duyarız.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- İletişim Formu ve Harita Bölümü -->
+  <section class="text-dark dark:text-white">
+    <div class="bg-light dark:bg-slate-800">
+      <div class="container py-5">
+        <div class="row">
+
+          <!-- Harita Bölümü -->
+          <div class="col-lg-8 mb-4">
+            <div class="position-relative rounded overflow-hidden bg-secondary" style="height: 400px;">
+              {% include 'component/map.html' %}
+            </div>
+            <div class="bg-white p-4 rounded shadow mt-3">
+              <div class="row">
+                <div class="col-md-6">
+                  <h6 class="fw-bold">Adres</h6>
+                  <p>Analiz Yayıncılık, İvedik Osb Mah, 2284. Sk. No:138, 06000 Yenimahalle / Ankara</p>
+                </div>
+                <div class="col-md-6">
+                  <h6 class="fw-bold">E-posta</h6>
+                  <a href="mailto:info@analizyayin.com.tr" class="text-primary">info@analizyayin.com.tr</a>
+                  <h6 class="fw-bold mt-3">Telefon</h6>
+                  <p>0850 305 5405</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- İletişim Formu -->
+          <div class="col-lg-4">
+            <h4 class="fw-bold mb-3">İletişim</h4>
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">İsim</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Adınızı giriniz"/>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">E-posta adresiniz</label>
+                <input type="email" id="email" name="email" class="form-control"
+                       placeholder="E-posta adresinizi giriniz"/>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Mesajınız</label>
+                <textarea id="message" name="message" class="form-control" rows="5"
+                          placeholder="Mesajınızı yazınız"></textarea>
+              </div>
+              <button type="submit" class="btn btn-danger w-100">Gönder</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+

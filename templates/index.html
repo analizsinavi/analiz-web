@@ -1,0 +1,37 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Ana Sayfa{% endblock %}
+
+{% block content %}
+  {% include 'component/slider.html' %}
+
+  <section class="text-dark dark:text-white">
+    <div class="bg-light dark:bg-slate-800 text-dark dark:text-white">
+      <div class="container py-5">
+        <div class="text-center">
+          <h1 class="mb-4 display-4 fw-bold">Analiz Yayınları</h1>
+          <p class="mb-4 text-secondary fs-5">
+            Analiz Dergisi Yayıncılık, Türkiye'nin ilkokul ve ortaokul öğrencilerinin ihtiyaçlarını karşılamak amacıyla
+            20 yıldan uzun bir süredir kaliteli içerikler üretmektedir. Bilsem hazırlık kitapları, soru bankaları,
+            yardımcı kaynaklar ve hikaye setleri gibi geniş bir ürün yelpazesi ile öğrencilerin eğitimine destek olmayı
+            hedeflemekteyiz.
+          </p>
+          <p class="mb-4 text-secondary fs-5">
+            Müşteri memnuniyetini her zaman ön planda tutarak, kaliteli ürünler sunmaya özen gösteriyoruz. Analiz
+            Dergisi Yayıncılık, müşteri odaklı yaklaşımı ve dürüst iş prensipleriyle tanınan güvenilir bir yayıncı
+            olarak bilinmektedir.
+          </p>
+          <p class="mb-4 text-secondary fs-5">
+            Öğrencilerin eğitim süreçlerine katkıda bulunmayı ve onların başarılarını desteklemeyi amaçlayan bir yayıncı
+            olarak, sürekli gelişmeye ve yeniliklere açık bir vizyonla çalışmalarımızı sürdürmekteyiz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include 'component/property.html' %}
+  {% include 'component/product-list-horizontal.html' %}
+  {% include 'component/announcement-list-horizontal.html' %}
+
+{% endblock %}
