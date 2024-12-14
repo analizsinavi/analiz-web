@@ -6,6 +6,9 @@ file_path = './data.xlsx'
 def fetch_urunler():
     urunler = pd.read_excel(file_path, sheet_name="Urun")
     urunler = urunler.fillna({
+        "SinifId": "",
+        "BransId": "",
+        "KategoriId": "",
         "Baslik": "Ürün Başlığı Yok",
         "Icerik": "Ürün İçeriği Yok",
         "Gorsel": "https://placehold.co/150",
@@ -22,6 +25,9 @@ def fetch_urunler_yeni():
     urunler = pd.read_excel(file_path, sheet_name="Urun")
     urunler = urunler[urunler["Yeni"] == 1]
     urunler = urunler.fillna({
+        "SinifId": "",
+        "BransId": "",
+        "KategoriId": "",
         "Baslik": "Ürün Başlığı Yok",
         "Icerik": "Ürün İçeriği Yok",
         "Gorsel": "https://placehold.co/150",
@@ -38,6 +44,9 @@ def fetch_urunler_populer():
     urunler = pd.read_excel(file_path, sheet_name="Urun")
     urunler = urunler[urunler["Populer"] == 1]
     urunler = urunler.fillna({
+        "SinifId": "",
+        "BransId": "",
+        "KategoriId": "",
         "Baslik": "Ürün Başlığı Yok",
         "Icerik": "Ürün İçeriği Yok",
         "Gorsel": "https://placehold.co/150",

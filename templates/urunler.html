@@ -34,7 +34,7 @@
 
       const filteredProducts = products.filter(product => {
         return (
-          (!selectedGrade || product.grade === selectedGrade) &&
+          (!selectedGrade || selectedGrade == product.grade) &&
           product.title.toLowerCase().includes(searchTerm.toLowerCase())
         );
       });

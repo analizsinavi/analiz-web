@@ -4,7 +4,7 @@
   <meta charset='utf-8'/>
   <base href="/" target="_self">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}Başlık{% endblock %}</title>
+  <title>{% block title %}Analiz Yayınları{% endblock %}</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,8 +18,6 @@
   <meta name="title" content="Analiz Yayınları - Türkiye&apos;nin Önde Gelen Kitap Yayınevi | Analiz Yayınları"/>
   <meta name="description"
         content="Analiz Yayınları, Türkiye&apos;de kitap yayıncılığı alanında öncü ve güvenilir bir markadır. Geniş kategorilerdeki kitaplardan akademik yayınlara kadar birçok seçenek sunan Analiz Yayınları, yüzlerce yazarın eserlerini okurlarla buluşturmak için çalışmaktadır."/>
-  <meta name="author" content="YouReply Teknoloji Araştırma A.Ş."/>
-  <meta name="copyright" content="YouReply Teknoloji Araştırma A.Ş."/>
   <link rel="canonical" href="https://www.analizyayinlari.com.tr/"/>
   <meta name="robots" content="index,follow"/>
   <meta property="twitter:title"
@@ -29,35 +27,143 @@
   <meta property="og:title" content="Analiz Yayınları - Türkiye&apos;nin Önde Gelen Kitap Yayınevi | Analiz Yayınları"/>
   <meta property="og:description"
         content="Analiz Yayınları, Türkiye&apos;de kitap yayıncılığı alanında öncü ve güvenilir bir markadır. Geniş kategorilerdeki kitaplardan akademik yayınlara kadar birçok seçenek sunan Analiz Yayınları, yüzlerce yazarın eserlerini okurlarla buluşturmak için çalışmaktadır."/>
-  <script type="application/ld+json">{
-    "@context": "https:\/\/schema.org",
-    "@graph": [
-      {
-        "@context": "https:\/\/schema.org",
-        "@graph": [
-          {
-            "url": "https:\/\/analizyayinlari.pixelperfect.tr",
-            "logo": "https:\/\/doneweb.s3.eu-central-1.amazonaws.com\/project\/project-7\/logo-light.png",
-            "contactPoint": {
-              "telephone": "0850 305 5405",
-              "contactType": "M\u00fc\u015fteri Hizmetleri",
-              "@type": "ContactPoint",
-              "@context": "https:\/\/schema.org\/"
-            },
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "url": "https://www.analizyayinlari.com.tr",
+          "name": "Analiz Yayınları",
+          "logo": "https://doneweb.s3.eu-central-1.amazonaws.com/project/project-7/logo-light.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "0850 305 5405",
+            "contactType": "Müşteri Hizmetleri",
+            "areaServed": "TR",
+            "availableLanguage": [
+              "Turkish"
+            ]
+          },
+          "sameAs": [
+            "https://www.facebook.com/AnalizYayinlari",
+            "https://www.instagram.com/AnalizYayinlari",
+            "https://www.twitter.com/AnalizYayinlari"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "url": "https://www.analizyayinlari.com.tr",
+          "name": "Analiz Yayınları",
+          "description": "Türkiye'nin önde gelen kitap yayınevi. Bilsem hazırlık kitapları, soru bankaları, yardımcı kaynaklar ve hikaye setleri sunmaktadır.",
+          "publisher": {
             "@type": "Organization",
-            "@context": "https:\/\/schema.org\/"
+            "name": "Analiz Yayınları",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://doneweb.s3.eu-central-1.amazonaws.com/project/project-7/logo-light.png"
+            }
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.analizyayinlari.com.tr/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
           }
-        ]
-      },
-      {
-        "@id": "https:\/\/analizyayinlari.pixelperfect.tr\/#webpage",
-        "url": "https:\/\/analizyayinlari.pixelperfect.tr\/",
-        "name": "Analiz Yay\u0131nlar\u0131 - T\u00fcrkiye'nin \u00d6nde Gelen Kitap Yay\u0131nevi",
-        "@type": "WebPage",
-        "@context": "https:\/\/schema.org\/"
-      }
-    ]
-  }</script>
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.analizyayinlari.com.tr/#webpage",
+          "url": "https://www.analizyayinlari.com.tr/",
+          "name": "Analiz Yayınları - Türkiye'nin Önde Gelen Kitap Yayınları",
+          "description": "Analiz Yayınları web sitesi, kullanıcılar için kitaplar, çerez politikası ve müşteri hizmetleri gibi birçok bilgi sunar.",
+          "inLanguage": "tr",
+          "isPartOf": {
+            "@type": "WebSite",
+            "url": "https://www.analizyayinlari.com.tr"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "name": "Sıkça Sorulan Sorular",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Çerez Nedir?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Çerezler, web siteleri tarafından kullanıcı deneyimini iyileştirmek ve sitenin daha etkili çalışmasını sağlamak için kullanılan küçük metin dosyalarıdır."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Hangi Çerez Türleri Kullanılıyor?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Web sitemizde oturum çerezleri, tercihler çerezleri ve analiz çerezleri gibi çeşitli çerez türleri kullanılmaktadır."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Çerezleri Nasıl Kontrol Edebilirim?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Çerezleri tarayıcı ayarlarınızdan kontrol edebilir, kabul edebilir veya reddedebilirsiniz."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.analizyayinlari.com.tr/cerez-politikasi",
+          "url": "https://www.analizyayinlari.com.tr/cerez-politikasi",
+          "name": "Çerez Politikası",
+          "description": "Analiz Yayınları çerez politikası hakkında detaylı bilgi alın."
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.analizyayinlari.com.tr/gizlilik-sozlesmesi",
+          "url": "https://www.analizyayinlari.com.tr/gizlilik-sozlesmesi",
+          "name": "Gizlilik Sözleşmesi",
+          "description": "Analiz Yayınları'nın kullanıcı gizliliği ve veri güvenliği politikası."
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.analizyayinlari.com.tr/kullanim-sartlari",
+          "url": "https://www.analizyayinlari.com.tr/kullanim-sartlari",
+          "name": "Kullanım Şartları",
+          "description": "Analiz Yayınları web sitesinin kullanım şartları ve koşulları."
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.analizyayinlari.com.tr/iletisim",
+          "url": "https://www.analizyayinlari.com.tr/iletisim",
+          "name": "İletişim",
+          "description": "Analiz Yayınları ile iletişim kurun. Adres ve telefon bilgileri ile sorularınızı yanıtlıyoruz."
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.analizyayinlari.com.tr/hakkimizda",
+          "url": "https://www.analizyayinlari.com.tr/hakkimizda",
+          "name": "Hakkımızda",
+          "description": "Analiz Yayınları hakkında bilgi edinin. Misyonumuz, vizyonumuz ve değerlerimiz."
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.analizyayinlari.com.tr/urunler",
+          "url": "https://www.analizyayinlari.com.tr/urunler",
+          "name": "Ürünler",
+          "description": "Analiz Yayınları'nın sunduğu kitaplar, kaynaklar ve eğitim materyalleri."
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.analizyayinlari.com.tr/bayiler",
+          "url": "https://www.analizyayinlari.com.tr/bayiler",
+          "name": "Bayiler",
+          "description": "Analiz Yayınları bayilik programı hakkında bilgi alın ve iş ortağı olun."
+        }
+      ]
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name='msapplication-TileColor' content='#000'>
   <meta name='theme-color' content='#000'/>

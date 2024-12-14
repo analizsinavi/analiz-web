@@ -115,10 +115,23 @@ def ekitap():
     return render_template("ekitap.html")
 
 
+@app.route("/gizlilik-sozlesmesi")
+def gizlilik_sozlesmesi():
+    return render_template("sozlesme-gizlilik.html")
+
+
+@app.route("/cerez-politikasi")
+def cerez_politikasi():
+    return render_template("sozlesme-cerez-politikasi.html")
+
+
+@app.route("/kullanim-sartlari")
+def kullanici_sozlesmesi():
+    return render_template("sozlesme-kullanim-sartlari.html")
+
+
 @app.route('/sitemap.xml')
 def seo_sitemap():
-    # articles = sorted(flatpages, key=lambda item:item.meta['published'], reverse=False)
-    # return render_template('sitemap.xml', articles=articles, base_url="https://buildstaticwebsites.com")
     return render_template('sitemap.xml', base_url="https://buildstaticwebsites.com")
 
 

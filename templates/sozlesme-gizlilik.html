@@ -1,0 +1,33 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Gizlilik Sözleşmesi{% endblock %}
+
+{% block content %}
+
+  {% set title = "Gizlilik Sözleşmesi" %}
+  {% set description = "Sayfamızdaki gizlilik sözleşmesi ile kullanıcılarımızın kişisel bilgilerinin nasıl toplandığı, kullanıldığı ve korunduğu hakkında bilgi veriyoruz. Gizlilik politikamızın amacı, kullanıcı gizliliğini ve veri güvenliğini ön planda tutarak güvenli bir kullanıcı deneyimi sağlamaktır." %}
+  {% include "component/title.html" ignore missing %}
+
+  <div class="container">
+    <p>Analiz Yayınları olarak, müşterilerimizin ve ziyaretçilerimizin gizlilik haklarını
+      önemsiyoruz. Bu gizlilik sözleşmesi, sizinle nasıl bilgileri topladığımız, kullandığımız ve koruduğumuz konusunda
+      bilgi vermeyi amaçlamaktadır.</p>
+    <p><strong>Bilgi Toplama ve Kullanma</strong></p>
+    <p>Web sitemizi ziyaret ettiğinizde veya bizimle iletişim kurduğunuzda, adınız, e-posta adresiniz veya telefon
+      numaranız gibi kişisel bilgilerinizi isteyebiliriz. Bu bilgilerinizi sadece size daha iyi hizmet verebilmek ve
+      sizinle iletişim kurabilmek amacıyla kullanırız. Bilgilerinizi üçüncü taraflarla paylaşmaz ve satmayız.</p>
+    <p><strong>Çerezler</strong></p>
+    <p>Web sitemiz, deneyiminizi geliştirmek ve daha iyi hizmet sunmak için çerezleri kullanabilir. Çerezler,
+      bilgisayarınızın sabit diskinde depolanan küçük metin dosyalarıdır. Bu çerezleri kabul edip etmemekte özgürsünüz.
+      Tarayıcınızın ayarlarını değiştirerek çerezleri reddedebilirsiniz, ancak unutmayın ki bu bazı web sitesi
+      özelliklerinin düzgün çalışmamasına neden olabilir.</p>
+    <p><strong>Güvenlik</strong></p>
+    <p>Müşteri bilgilerinin güvenliği bizim için son derece önemlidir. Kişisel bilgilerinizi korumak için uygun güvenlik
+      önlemlerini alırız ve bilgilerin yetkisiz erişimini engellemek için çaba sarf ederiz.</p>
+    <p>Eğer bu gizlilik sözleşmesi hakkında herhangi bir sorunuz varsa, lütfen bizimle <a
+      href="mailto:info@analizyayin.com.tr" rel="noopener noreferrer" target="_blank">info@analizyayin.com.tr</a>
+      adresinden iletişime geçiniz.</p>
+  </div>
+
+{% endblock %}
+

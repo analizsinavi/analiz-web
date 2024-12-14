@@ -1,0 +1,26 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Kullanım Şartları{% endblock %}
+
+{% block content %}
+
+  {% set title = "Kullanım Şartları" %}
+  {% set description = "Bu bölümde Analiz Yayınları'nın kullanıcılarına sunulan hizmetlerin kullanım şartları açıklanmaktadır. Lütfen bu şartları dikkatlice okuyunuz ve kabul ettiğiniz takdirde hizmetlerimizi kullanmaya başlayınız." %}
+  {% include "component/title.html" ignore missing %}
+
+  <div class="container">
+    <p>1. Web sitemizi ziyaret eden her bir kullanıcı, Analiz Yayınları'nın bu Kullanım
+      Şartları'nı kabul etmiş sayılır.</p>
+    <p>2. Analiz Yayınları, web sitemizde yer alan içeriği her zaman güncelleme ve değiştirme hakkını saklı tutar.</p>
+    <p>3. Sitemizde yer alan tüm içerikler, yalnızca bilgi ve tanıtım amaçlıdır ve kesinlikle hukuki tavsiye veya
+      garanti niteliği taşımaz.</p>
+    <p>4. Kullanıcılar, web sitemizi yasalara ve etik kurallara uygun bir şekilde kullanmalıdır.</p>
+    <p>5. Analiz Yayınları'nın lisans haklarına, telif haklarına ve diğer fikri mülkiyet haklarına saygı
+      gösterilmelidir.</p>
+    <p>6. Web sitemizin kullanımından kaynaklanan herhangi bir sorun veya zarardan sorumlu tutulamayız.</p>
+    <p>7. Analiz Yayınları'nın web sitesine erişimin kesintisiz veya hatasız olacağını garanti etmiyoruz.</p>
+    <p>8. Kullanıcıların web sitemizi kullanırken gizlilik politikamızı da kabul etmiş sayılır.</p>
+  </div>
+
+{% endblock %}
+
