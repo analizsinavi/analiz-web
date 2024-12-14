@@ -51,10 +51,21 @@ def fetch_urunler_populer():
 
 
 def fetch_urun(urunId):
-    urunler = fetch_urunler()
-    for urun in urunler:
-        if int(urun["UrunId"]) == urunId:
-            return urun
+    urunler = pd.read_excel(file_path, sheet_name="Urun")
+    urunler = urunler.fillna({
+        "Baslik": "Ürün Başlığı Yok",
+        "Icerik": "Ürün İçeriği Yok",
+        "Gorsel": "https://placehold.co/150",
+        "LinkSatinAlma": "",
+        "LinkOrnekSayfa": "",
+        "Yeni": 0,
+        "Populer": 0,
+    })
+
+    for _, urun in urunler.iterrows():
+        if urun["UrunId"] == int(urunId):
+            return urun.to_dict()  # Convert the row to a dictionary before returning
+
     return None
 
 
@@ -80,6 +91,15 @@ def fetch_duyurular():
     duyurular = pd.read_excel(file_path, sheet_name="Duyuru")
     print(duyurular)
     return duyurular.to_dict(orient='records')
+
+
+def fetch_duyuru(duyuruId):
+    duyurular = pd.read_excel(file_path, sheet_name="Duyuru")
+    for _, duyuru in duyurular.iterrows():
+        if duyuru["DuyuruId"] == int(duyuruId):
+            return duyuru.to_dict()  # Convert the row to a dictionary before returning
+
+    return None
 
 
 def fetch_duyurular_yeni():

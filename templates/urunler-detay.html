@@ -8,32 +8,30 @@
 
       <!-- Carousel Section -->
       <div class="col-md-6">
-        <img src="{{ urun.Gorsel }}" alt="{{ urun.Baslik }}">
+        <img src="{{ urun.Gorsel }}" alt="{{ urun.Baslik }}" class="w-100" style="background: #f4f4f4">
       </div>
 
       <!-- Product Details Section -->
       <div class="col-md-6">
         <h1 class="mb-4">{{ urun.Baslik }}</h1>
         <div class="d-flex justify-content-start align-items-center mb-4">
-          <a href="{{ urun.SiparisLink }}" class="btn btn-outline-danger me-3 d-flex align-items-center">
-            <i class="bi bi-cart-fill me-2"></i> Sipariş Ver
-          </a>
-          <a href="{{ urun.OrnekSayfalarLink }}" class="btn btn-outline-secondary me-3 d-flex align-items-center">
-            <i class="bi bi-file-earmark-text me-2"></i> Örnek Sayfalar
-          </a>
-          <a href="{{ urun.AkilliTahtaLink }}" class="btn btn-outline-dark d-flex align-items-center">
+          {% if "LinkSatinAlma" in urun and urun.LinkSatinAlma %}
+            <a href="{{ urun.LinkSatinAlma }}" class="btn btn-outline-danger me-3 d-flex align-items-center">
+              <i class="bi bi-cart-fill me-2"></i> Sipariş Ver
+            </a>
+          {% endif %}
+          {% if "LinkOrnekSayfa" in urun and urun.LinkOrnekSayfa %}
+            <a href="{{ urun.LinkOrnekSayfa }}" class="btn btn-outline-secondary me-3 d-flex align-items-center">
+              <i class="bi bi-file-earmark-text me-2"></i> Örnek Sayfalar
+            </a>
+          {% endif %}
+          <a href="https://www.analizogretmen.com/" class="btn btn-outline-dark d-flex align-items-center">
             <i class="bi bi-tv me-2"></i> Akıllı Tahta Uygulaması
           </a>
         </div>
-        <p class="text-secondary">{{ urun.Aciklama }}</p>
-      </div>
-    </div>
-
-    <!-- Product Summary -->
-    <div class="row mt-5">
-      <div class="col-12">
-        <h2>{{ urun.Baslik }}</h2>
-        <p class="text-secondary">{{ urun.Ozet }}</p>
+        <p class="text-secondary">
+          {{ urun.Aciklama }}
+        </p>
       </div>
     </div>
   </div>

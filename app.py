@@ -97,6 +97,19 @@ def duyurular():
     return render_template("duyurular.html", duyurular=duyurular)
 
 
+@app.route("/duyurular/<duyuruId>")
+def duyurular_detay(duyuruId):
+    duyuru = data.fetch_duyuru(duyuruId)
+
+    if not duyuru:
+        abort(404)  # Return a 404 if the product is not found
+
+    return render_template(
+        "duyurular-detay.html",
+        duyuru=duyuru
+    )
+
+
 @app.route("/e-kitap")
 def ekitap():
     return render_template("ekitap.html")

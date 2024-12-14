@@ -1,0 +1,23 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}{{ duyuru.Baslik }}{% endblock %}
+
+{% block content %}
+  <div class="container my-5">
+    <div class="row">
+
+      <!-- Carousel Section -->
+      <div class="col-md-6">
+        <img src="{{ duyuru.Gorsel }}" alt="{{ duyuru.Baslik }}" class="w-100" style="background: #f4f4f4">
+      </div>
+
+      <!-- Announcement Details Section -->
+      <div class="col-md-6">
+        <h1 class="mb-4">{{ duyuru.Baslik }}</h1>
+        <p class="text-secondary">
+          {{ duyuru.Icerik }}
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

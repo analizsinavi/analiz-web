@@ -15,7 +15,7 @@
           {% for duyuru in duyurular %}
             <div class="col-md-6 col-lg-4">
               <div class="card border rounded shadow-sm">
-                <a href="/blog/what-are-the-news-6">
+                <a href="/duyurular/{{ duyuru.DuyuruId }}">
                   <img
                     src="{{ duyuru.Gorsel }}"
                     class="card-img-top"
@@ -26,7 +26,7 @@
                   <h5 class="card-title">{{ duyuru.Baslik }}</h5>
                   <p class="card-text text-muted">{{ duyuru.Aciklama }}</p>
                   <div class="d-flex justify-content-between align-items-center">
-                    <a href="/duyurular/{{ duyuru.Baslik }}" class="btn btn-link text-primary p-0">
+                    <a href="/duyurular/{{ duyuru.DuyuruId }}" class="btn btn-link text-primary p-0">
                       Devamı
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
