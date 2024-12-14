@@ -3,23 +3,17 @@
 {% block title %}Ürünlerimiz{% endblock %}
 
 {% block content %}
-  <section class="text-dark dark:text-white">
-    <div class="bg-light dark:bg-slate-800" style="background: rgb(254, 252, 232); color: rgb(0, 0, 0);">
-      <div class="container py-5">
-        <div class="text-center">
-          <h1 class="display-4 fw-bold mb-4">Ürünlerimiz</h1>
-          <p class="fs-5 text-muted mx-auto" style="max-width: 800px;">
-            Analiz Yayınları'nın geniş ürün yelpazesini keşfedin. Kitaplar, eğitim setleri ve daha fazlası burada!
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+
+  {% set title = "Ürünlerimiz" %}
+  {% set description = "Analiz Yayınları'nın geniş ürün yelpazesini keşfedin. Kitaplar, eğitim setleri ve daha fazlası burada!" %}
+  {% include "component/title.html" ignore missing %}
 
   <div id="root"></div>
 
   <script type="application/json" id="data-json">
       {{ data|safe }}
+
+
 
 
 

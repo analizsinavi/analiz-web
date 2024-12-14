@@ -4,20 +4,9 @@
 
 {% block content %}
 
-  <!-- İletişim Bilgilerimiz Bölümü -->
-  <section class="text-dark dark:text-white">
-    <div>
-      <div class="container py-5">
-        <div class="text-center">
-          <h1 class="mb-4 display-4 fw-bold">İletişim Bilgilerimiz</h1>
-          <p class="mb-4 fs-5 text-secondary">
-            Bizi arayın, bize yazın veya ofisimize uğrayın! İletişim bilgilerimiz aşağıda yer almaktadır. Herhangi bir
-            sorunuz veya talebiniz varsa, size yardımcı olmaktan mutluluk duyarız.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  {% set title = "İletişim Bilgilerimiz" %}
+  {% set description = "Bizi arayın, bize yazın veya ofisimize uğrayın! İletişim bilgilerimiz aşağıda yer almaktadır. Herhangi bir sorunuz veya talebiniz varsa, size yardımcı olmaktan mutluluk duyarız." %}
+  {% include "component/title.html" ignore missing %}
 
   <!-- İletişim Formu ve Harita Bölümü -->
   <section class="text-dark dark:text-white">
