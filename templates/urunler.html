@@ -3,32 +3,127 @@
 {% block title %}Ürünlerimiz{% endblock %}
 
 {% block content %}
-  <div class="container">
-    <h1>Ürünlerimiz</h1>
-    <div id="root"></div>
-  </div>
-  {% for urun in urunler %}
-    <div>
-      {{ urun.UrunId }} - {{ urun.Baslik }}
+  <section class="text-dark dark:text-white">
+    <div class="bg-light dark:bg-slate-800" style="background: rgb(254, 252, 232); color: rgb(0, 0, 0);">
+      <div class="container py-5">
+        <div class="text-center">
+          <h1 class="display-4 fw-bold mb-4">Ürünlerimiz</h1>
+          <p class="fs-5 text-muted mx-auto" style="max-width: 800px;">
+            Analiz Yayınları'nın geniş ürün yelpazesini keşfedin. Kitaplar, eğitim setleri ve daha fazlası burada!
+          </p>
+        </div>
+      </div>
     </div>
-  {% endfor %}
+  </section>
+
+  <div id="root"></div>
+
+  <script type="application/json" id="data-json">
+      {{ data|safe }}
+
+
+
+
+  </script>
+
   <script type="text/babel" data-presets="react,stage-3">
-      const Example = () => {
-          const [count, setCount] = React.useState(0);
-          React.useEffect(() => {
-              document.title = `You clicked ${count} times`;
-          });
-          return (
-              <div>
-                  <p>You clicked {count} times</p>
-                  <button onClick={() => setCount(count + 1)}>
-                      Click me
-                  </button>
+    const App = () => {
+      const [selectedGrade, setSelectedGrade] = React.useState(null);
+      const [searchTerm, setSearchTerm] = React.useState('');
+
+      const data = JSON.parse(document.getElementById("data-json").textContent);
+
+      const products = data.urunler.map(urun => ({
+        id: urun.UrunId,
+        title: urun.Baslik && !Number.isNaN(urun.Baslik) ? urun.Baslik : "Ürün Başlığı Yok",
+        content: urun.Icerik && !Number.isNaN(urun.Icerik) ? urun.Icerik : "Ürün İçeriği Yok",
+        image: urun.Gorsel && !Number.isNaN(urun.Gorsel) ? urun.Gorsel : "https://placehold.co/150",
+        new: urun.Yeni || 0,
+        popular: urun.Populer || 0,
+      }));
+
+      const grades = data.siniflar.map(item => item.Baslik); // Extract grade names
+      const subjects = data.branslar.map(item => item.Baslik); // Extract subject names
+      const categories = data.kategoriler.map(item => item.Baslik); // Extract other category names
+
+      const filteredProducts = products.filter(product => {
+        return (
+          (!selectedGrade || product.grade === selectedGrade) &&
+          product.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      });
+
+      return (
+        <div className="container mt-4">
+          <div className="row">
+            {/* Sidebar */}
+            <div className="col-md-3">
+              <div className="mb-4">
+                <h5>Sınıf Seçiniz</h5>
+                {grades.map((grade, index) => (
+                  <label className="form-check" key={index}>
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      checked={selectedGrade === grade}
+                      onChange={() => setSelectedGrade(selectedGrade === grade ? null : grade)}
+                    />
+                    <span className="form-check-label">{grade}</span>
+                  </label>
+                ))}
               </div>
-          );
-      };
-      const root = ReactDOM.createRoot(document.getElementById("root"))
-      root.render(<Example/>);
+              <div className="mb-4">
+                <h5>Ders Seçiniz</h5>
+                {subjects.map((subject, index) => (
+                  <label className="form-check" key={index}>
+                    <input className="form-check-input" type="checkbox"/>
+                    <span className="form-check-label">{subject}</span>
+                  </label>
+                ))}
+              </div>
+              <div className="mb-4">
+                <h5>Diğerleri</h5>
+                {categories.map((category, index) => (
+                  <label className="form-check" key={index}>
+                    <input className="form-check-input" type="checkbox"/>
+                    <span className="form-check-label">{category}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Main Content */}
+            <div className="col-md-9">
+              <div className="mb-4">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Ürün arayın..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
+              <div className="row">
+                {filteredProducts.map(product => (
+                  <div className="col-md-4 mb-4" key={product.id}>
+                    <div className="card h-100">
+                      <img src={product.image} className="card-img-top" alt={product.title}/>
+                      <div className="card-body text-center">
+                        <h5 className="card-title">{product.title}</h5>
+                        <p className="card-text">{product.content}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    const root = ReactDOM.createRoot(document.getElementById("root"))
+    root.render(<App/>);
   </script>
 
 {% endblock %}

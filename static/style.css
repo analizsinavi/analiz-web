@@ -2,16 +2,35 @@ html {
     transition: background-color 0.3s, color 0.3s;
 }
 
+/**
 body {
-    display: grid;
-    grid-template:
-            "H"
-            "M"
-            "F";
-    grid-template-rows: min-content auto 100px;
+display: grid;
+grid-template:
+        "H"
+        "M"
+        "F";
+grid-template-rows: min-content auto 100px;
+}
+
+header {
+#grid-area: H;
+}
+
+main {
+#grid-area: M;
+}
+
+
+footer {
+#grid-area: F;
+}
+*/
+
+
+body {
     padding: 0;
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-weight: normal;
@@ -19,20 +38,12 @@ body {
     font-style: normal;
 }
 
-header {
-    grid-area: H;
-}
-
-main {
-    grid-area: M;
-}
-
 main .container {
     height: 100%;
 }
 
 footer {
-    grid-area: F;
+    height: 100px;
     background: #f4f4f4;
 }
 
@@ -60,7 +71,9 @@ footer .container {
     color: #007bff;
 }
 
-body {
-    background-color: var(--bs-body-bg);
-    color: var(--bs-body-color);
+.card-img, .card-img-bottom, .card-img-top {
+    width: 100%;
+    display: block;
+    height: 200px;
+    object-fit: contain;
 }

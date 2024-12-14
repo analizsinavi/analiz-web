@@ -4,19 +4,19 @@
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <div id="map"></div>
 <style>
-    #map {
-        height: 400px;
-    }
+  #map {
+    height: 400px;
+  }
 
-    .leaflet-control-attribution {
-        display: none !important;
-    }
+  .leaflet-control-attribution {
+    display: none !important;
+  }
 </style>
 <script>
-    const map = L.map('map').setView([39.9965941, 32.7378351], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '',
-        attributionControl: false // Disables the attribution control
-    }).addTo(map);
-    const marker = L.marker([39.9965941, 32.7378351]).addTo(map);
+  const map = L.map('map').setView([39.9965941, 32.7378351], 13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '',
+    attributionControl: false // Disables the attribution control
+  }).addTo(map);
+  const marker = L.marker([39.9965941, 32.7378351]).addTo(map);
 </script>

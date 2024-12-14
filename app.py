@@ -1,8 +1,17 @@
 from flask import Flask, render_template
-from datetime import datetime
 import data
+import locale
+import json
+
+# Set locale to Turkish
+locale.setlocale(locale.LC_TIME, 'tr_TR.UTF-8')  # 'tr_TR.UTF-8' for Linux/MacOS, 'Turkish_Turkey.1254' for Windows
 
 app = Flask(__name__)
+
+
+@app.template_filter('format_turkish_date')
+def format_turkish_date(value):
+    return value.strftime('%d %B %Y')  # Turkish format
 
 
 @app.errorhandler(403)
@@ -17,7 +26,8 @@ def notfound(e):
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    slidelar = data.fetch_slidelar()
+    return render_template("index.html", slidelar=slidelar)
 
 
 @app.route("/iletisim")
@@ -33,13 +43,27 @@ def hakkimizda():
 @app.route("/bayiler")
 def bayiler():
     bayiler = data.fetch_bayiler()
-    return render_template("bayiler.html", bayiler=bayiler)
+    return render_template(
+        "bayiler.html",
+        data=json.dumps({"bayiler": bayiler})
+    )
 
 
 @app.route("/urunler")
 def urunler():
     urunler = data.fetch_urunler()
-    return render_template("urunler.html", urunler=urunler)
+    siniflar = data.fetch_siniflar()
+    branslar = data.fetch_branslar()
+    kategoriler = data.fetch_kategoriler()
+    return render_template(
+        "urunler.html",
+        data=json.dumps({
+            "urunler": urunler,
+            "siniflar": siniflar,
+            "branslar": branslar,
+            "kategoriler": kategoriler
+        })
+    )
 
 
 @app.route("/duyurular")
