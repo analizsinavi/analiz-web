@@ -5,7 +5,7 @@
 {% block content %}
 
   <section class="text-dark dark:text-white">
-    <div class="bg-light dark:bg-slate-800" style="background: rgb(254, 252, 232); color: rgb(0, 0, 0);">
+    <div class="bg-light dark:bg-slate-800">
       <div class="container py-5">
         <div class="text-center">
           <h1 class="display-4 fw-bold mb-4">Bayilerimiz</h1>
@@ -29,6 +29,12 @@
 
   <script type="application/json" id="data-json">
     {{ data|safe }}
+
+
+
+
+
+
 
   </script>
 
@@ -164,6 +170,89 @@
 
     .leaflet-control-attribution {
       display: none !important;
+    }
+  </style>
+
+  <section class="text-dark dark:text-white">
+    <div class="bg-light dark:bg-slate-800 text-dark dark:text-white">
+      <div class="container py-5">
+        <h2 class="mb-8 text-4xl font-extrabold">Sıkça Sorulan Sorular</h2>
+        <div class="row border-top pt-4">
+          <div class="col-md-6 mb-4">
+            <div class="mb-3">
+              <h3 class="d-flex align-items-center mb-3 text-lg font-medium">
+                <span class="material-symbols-outlined me-2 text-secondary">help</span>
+                Bayiler nasıl başvuru yapabilir?
+              </h3>
+              <p class="text-muted">
+                Bayiler başvurularını Analiz Yayıncılık resmi web sitesindeki başvuru formunu doldurarak yapabilirler.
+                Ayrıca, info@analizyayin.com.tr adresine e-posta göndererek veya 0850 305 5405 numaralı telefonu
+                arayarak başvurularını iletebilirler.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="mb-3">
+              <h3 class="d-flex align-items-center mb-3 text-lg font-medium">
+                <span class="material-symbols-outlined me-2 text-secondary">description</span>
+                Bayilik için gerekli belgeler nelerdir?
+              </h3>
+              <p class="text-muted">
+                Bayilik başvurusu için gerekli belgeler arasında kimlik fotokopisi, vergi levhası, sicil gazetesi,
+                işyeri ruhsatı ve bayilik sözleşmesi yer almaktadır.
+                Bu belgelerin tamamının eksiksiz olarak sunulması gerekmektedir. Bu belgelere ek belgeler istenebilir.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="mb-3">
+              <h3 class="d-flex align-items-center mb-3 text-lg font-medium">
+                <span class="material-symbols-outlined me-2 text-secondary">check_circle</span>
+                Bayilik başvurusu nasıl değerlendirilir?
+              </h3>
+              <p class="text-muted">
+                Bayilik başvuruları, başvuru formunda yer alan bilgiler ve gerekli belgelerin incelenmesi sonucunda
+                değerlendirilir.
+                Başvuru sahibinin iş tecrübesi, finansal durumu ve uygunluk kriterlerine göre başvurular kabul edilir
+                veya reddedilir.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="mb-3">
+              <h3 class="d-flex align-items-center mb-3 text-lg font-medium">
+                <span class="material-symbols-outlined me-2 text-secondary">schedule</span>
+                Bayilik süreci ne kadar sürer?
+              </h3>
+              <p class="text-muted">
+                Bayilik başvurusunun sonuçlanma süresi başvuru sahibinin sağladığı bilgi ve belgelerin
+                değerlendirilmesi, inceleme süreci ve sözleşme hazırlık aşamasına bağlı olarak değişebilir.
+                Ortalama olarak, başvurudan sonuç alınması 2-4 hafta arasında sürebilir.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="mb-3">
+              <h3 class="d-flex align-items-center mb-3 text-lg font-medium">
+                <span class="material-symbols-outlined me-2 text-secondary">gavel</span>
+                Bayilik şartları nelerdir?
+              </h3>
+              <p class="text-muted">
+                Bayilik şartları bayilik başvurusu yapacak olan kişinin iş deneyimi, finansal durumu, işyeri uygunluğu
+                gibi faktörlere bağlı olarak değişebilir.
+                Analiz Yayıncılık bayilik şartlarını karşılayan adaylar, başvurularını yapabilir ve değerlendirmeye
+                alınabilir.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <style>
+    #faq svg {
+      width: 30px;
+      height: 30px;
     }
   </style>
 
