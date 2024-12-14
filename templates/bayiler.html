@@ -4,240 +4,240 @@
 
 {% block content %}
 
-{% set title = "Bayilerimiz" %}
-{% set description %}
-Analiz Yayınları bayilik programına katılarak siz de başarılı bir iş ortağı olabilirsiniz.
-Geniş ürün yelpazemizle doğru hedef kitlenize ulaşmanızı sağlıyoruz.
-Üstün kaliteli ürünlerimiz ve müşteri odaklı hizmet anlayışımızla bayiliklerimize değer katıyoruz.
-Siz de Analiz Yayınları bayiliği ile başarılı bir iş fırsatına adım atın!
-{% endset %}
-{% include "component/title.html" ignore missing %}
+  {% set title = "Bayilerimiz" %}
+  {% set description %}
+  Analiz Yayınları bayilik programına katılarak siz de başarılı bir iş ortağı olabilirsiniz.
+  Geniş ürün yelpazemizle doğru hedef kitlenize ulaşmanızı sağlıyoruz.
+  Üstün kaliteli ürünlerimiz ve müşteri odaklı hizmet anlayışımızla bayiliklerimize değer katıyoruz.
+  Siz de Analiz Yayınları bayiliği ile başarılı bir iş fırsatına adım atın!
+  {% endset %}
+  {% include "component/title.html" ignore missing %}
 
-<div id="root"></div>
+  <div id="root"></div>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-<script type="application/json" id="data-json">{{ data|safe }}</script>
+  <script type="application/json" id="data-json">{{ data|safe }}</script>
 
-<script type="text/babel" data-presets="react">
-  const App = () => {
-    const data = JSON.parse(document.getElementById("data-json").textContent);
-    const dealers = data.bayiler;
+  <script type="text/babel" data-presets="react">
+    const App = () => {
+      const data = JSON.parse(document.getElementById("data-json").textContent);
+      const dealers = data.bayiler;
 
-    const [selectedCity, setSelectedCity] = React.useState("");
-    const [searchTerm, setSearchTerm] = React.useState("");
-    const mapRef = React.useRef(null); // Reference to the Leaflet map
-    const markerGroupRef = React.useRef(null); // Reference to the marker group
+      const [selectedCity, setSelectedCity] = React.useState("");
+      const [searchTerm, setSearchTerm] = React.useState("");
+      const mapRef = React.useRef(null); // Reference to the Leaflet map
+      const markerGroupRef = React.useRef(null); // Reference to the marker group
 
-    const filteredDealers = dealers.filter(dealer => {
-      const matchesCity = selectedCity ? dealer.Il === selectedCity : true;
-      const matchesSearchTerm =
-        dealer.Adres.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        dealer.Ilce.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        dealer.Il.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        dealer.Email.toLowerCase().includes(searchTerm.toLowerCase());
-      return matchesCity && matchesSearchTerm;
-    });
-
-    React.useEffect(() => {
-      // Initialize the map only once
-      if (!mapRef.current) {
-        mapRef.current = L.map("map").setView([39.92077, 32.85411], 5); // Default center to Turkey
-
-        // Add tile layer
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-          attribution: '&copy; OpenStreetMap contributors',
-        }).addTo(mapRef.current);
-
-        // Create a marker group
-        markerGroupRef.current = L.layerGroup().addTo(mapRef.current);
-      }
-
-      // Update markers dynamically
-      markerGroupRef.current.clearLayers(); // Clear existing markers
-
-      filteredDealers.forEach(dealer => {
-        const marker = L.marker([dealer.Lat, dealer.Lng]).addTo(markerGroupRef.current);
-        marker.bindPopup(
-          `<strong>${dealer.Baslik}</strong><br>${dealer.Ilce}, ${dealer.Il}<br>${dealer.Adres}`
-        );
+      const filteredDealers = dealers.filter(dealer => {
+        const matchesCity = selectedCity ? dealer.Il === selectedCity : true;
+        const matchesSearchTerm =
+          dealer.Adres.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          dealer.Ilce.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          dealer.Il.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          dealer.Email.toLowerCase().includes(searchTerm.toLowerCase());
+        return matchesCity && matchesSearchTerm;
       });
 
-      // Adjust map bounds to fit markers
-      if (filteredDealers.length > 0) {
-        const bounds = L.latLngBounds(filteredDealers.map(dealer => [dealer.Lat, dealer.Lng]));
-        mapRef.current.fitBounds(bounds);
-      }
-    }, [filteredDealers]); // Run whenever filteredDealers changes
+      React.useEffect(() => {
+        // Initialize the map only once
+        if (!mapRef.current) {
+          mapRef.current = L.map("map").setView([39.92077, 32.85411], 5); // Default center to Turkey
 
-    const uniqueCities = [...new Set(dealers.map(dealer => dealer.Il))];
+          // Add tile layer
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: '&copy; OpenStreetMap contributors',
+          }).addTo(mapRef.current);
 
-    return (
-      <div className="container mt-4">
-        <div className="row">
-          <div className="col-md-3">
-            <label>Şehirler</label>
-            <select
-              className="form-select mb-4"
-              value={selectedCity}
-              onChange={(e) => setSelectedCity(e.target.value)}
-            >
-              <option value="">Tüm Şehirler</option>
-              {uniqueCities.map((city, index) => (
-                <option key={index} value={city}>
-                  {city}
-                </option>
-              ))}
-            </select>
+          // Create a marker group
+          markerGroupRef.current = L.layerGroup().addTo(mapRef.current);
+        }
 
-            <label>Arayın</label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Bayi, şehir, ilçe arayın..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
+        // Update markers dynamically
+        markerGroupRef.current.clearLayers(); // Clear existing markers
 
-          <div className="col-md-9">
-            <div id="map"></div>
+        filteredDealers.forEach(dealer => {
+          const marker = L.marker([dealer.Lat, dealer.Lng]).addTo(markerGroupRef.current);
+          marker.bindPopup(
+            `<strong>${dealer.Baslik}</strong><br>${dealer.Ilce}, ${dealer.Il}<br>${dealer.Adres}`
+          );
+        });
 
-            <div className="table-responsive mt-4">
-              <table className="table table-striped">
-                <thead>
-                <tr>
-                  <th>İl</th>
-                  <th>İlçe</th>
-                  <th>Adres</th>
-                  <th>Telefon</th>
-                  <th>Email</th>
-                </tr>
-                </thead>
-                <tbody>
-                {filteredDealers.length > 0 ? (
-                  filteredDealers.map((dealer, index) => (
-                    <tr key={index}>
-                      <td>{dealer.Il}</td>
-                      <td>{dealer.Ilce}</td>
-                      <td>{dealer.Adres}</td>
-                      <td>{dealer.Telefon}</td>
-                      <td>{dealer.Email}</td>
-                    </tr>
-                  ))
-                ) : (
+        // Adjust map bounds to fit markers
+        if (filteredDealers.length > 0) {
+          const bounds = L.latLngBounds(filteredDealers.map(dealer => [dealer.Lat, dealer.Lng]));
+          mapRef.current.fitBounds(bounds);
+        }
+      }, [filteredDealers]); // Run whenever filteredDealers changes
+
+      const uniqueCities = [...new Set(dealers.map(dealer => dealer.Il))];
+
+      return (
+        <div className="container mt-4">
+          <div className="row">
+            <div className="col-md-3">
+              <label>Şehirler</label>
+              <select
+                className="form-select mb-4"
+                value={selectedCity}
+                onChange={(e) => setSelectedCity(e.target.value)}
+              >
+                <option value="">Tüm Şehirler</option>
+                {uniqueCities.map((city, index) => (
+                  <option key={index} value={city}>
+                    {city}
+                  </option>
+                ))}
+              </select>
+
+              <label>Arayın</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Bayi, şehir, ilçe arayın..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+
+            <div className="col-md-9">
+              <div id="map"></div>
+
+              <div className="table-responsive mt-4">
+                <table className="table table-striped">
+                  <thead>
                   <tr>
-                    <td colSpan="5" className="text-center">
-                      Bayi bulunamadı.
-                    </td>
+                    <th>İl</th>
+                    <th>İlçe</th>
+                    <th>Adres</th>
+                    <th>Telefon</th>
+                    <th>Email</th>
                   </tr>
-                )}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                  {filteredDealers.length > 0 ? (
+                    filteredDealers.map((dealer, index) => (
+                      <tr key={index}>
+                        <td>{dealer.Il}</td>
+                        <td>{dealer.Ilce}</td>
+                        <td>{dealer.Adres}</td>
+                        <td>{dealer.Telefon}</td>
+                        <td>{dealer.Email}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="5" className="text-center">
+                        Bayi bulunamadı.
+                      </td>
+                    </tr>
+                  )}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App/>);
+  </script>
+  <style>
+    #map {
+      height: 500px;
+    }
+
+    .leaflet-control-attribution {
+      display: none !important;
+    }
+  </style>
+
+  <section class="text-dark dark:text-white">
+    <div class="bg-light dark:bg-slate-800 text-dark dark:text-white">
+      <div class="container py-5">
+        <h2 class="mb-8 text-4xl font-extrabold">Sıkça Sorulan Sorular</h2>
+        <div class="row border-top pt-4">
+          <div class="col-md-6 mb-4">
+            <div class="mb-3">
+              <h3 class="d-flex align-items-center mb-3 text-lg font-medium">
+                <span class="material-symbols-outlined me-2 text-secondary">help</span>
+                Bayiler nasıl başvuru yapabilir?
+              </h3>
+              <p class="text-muted">
+                Bayiler başvurularını Analiz Yayıncılık resmi web sitesindeki başvuru formunu doldurarak yapabilirler.
+                Ayrıca, info@analizyayin.com.tr adresine e-posta göndererek veya 0850 305 5405 numaralı telefonu
+                arayarak başvurularını iletebilirler.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="mb-3">
+              <h3 class="d-flex align-items-center mb-3 text-lg font-medium">
+                <span class="material-symbols-outlined me-2 text-secondary">description</span>
+                Bayilik için gerekli belgeler nelerdir?
+              </h3>
+              <p class="text-muted">
+                Bayilik başvurusu için gerekli belgeler arasında kimlik fotokopisi, vergi levhası, sicil gazetesi,
+                işyeri ruhsatı ve bayilik sözleşmesi yer almaktadır.
+                Bu belgelerin tamamının eksiksiz olarak sunulması gerekmektedir. Bu belgelere ek belgeler istenebilir.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="mb-3">
+              <h3 class="d-flex align-items-center mb-3 text-lg font-medium">
+                <span class="material-symbols-outlined me-2 text-secondary">check_circle</span>
+                Bayilik başvurusu nasıl değerlendirilir?
+              </h3>
+              <p class="text-muted">
+                Bayilik başvuruları, başvuru formunda yer alan bilgiler ve gerekli belgelerin incelenmesi sonucunda
+                değerlendirilir.
+                Başvuru sahibinin iş tecrübesi, finansal durumu ve uygunluk kriterlerine göre başvurular kabul edilir
+                veya reddedilir.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="mb-3">
+              <h3 class="d-flex align-items-center mb-3 text-lg font-medium">
+                <span class="material-symbols-outlined me-2 text-secondary">schedule</span>
+                Bayilik süreci ne kadar sürer?
+              </h3>
+              <p class="text-muted">
+                Bayilik başvurusunun sonuçlanma süresi başvuru sahibinin sağladığı bilgi ve belgelerin
+                değerlendirilmesi, inceleme süreci ve sözleşme hazırlık aşamasına bağlı olarak değişebilir.
+                Ortalama olarak, başvurudan sonuç alınması 2-4 hafta arasında sürebilir.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="mb-3">
+              <h3 class="d-flex align-items-center mb-3 text-lg font-medium">
+                <span class="material-symbols-outlined me-2 text-secondary">gavel</span>
+                Bayilik şartları nelerdir?
+              </h3>
+              <p class="text-muted">
+                Bayilik şartları bayilik başvurusu yapacak olan kişinin iş deneyimi, finansal durumu, işyeri uygunluğu
+                gibi faktörlere bağlı olarak değişebilir.
+                Analiz Yayıncılık bayilik şartlarını karşılayan adaylar, başvurularını yapabilir ve değerlendirmeye
+                alınabilir.
+              </p>
             </div>
           </div>
         </div>
       </div>
-    );
-  };
-
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-  root.render(<App/>);
-</script>
-<style>
-  #map {
-    height: 500px;
-  }
-
-  .leaflet-control-attribution {
-    display: none !important;
-  }
-</style>
-
-<section class="text-dark dark:text-white">
-  <div class="bg-light dark:bg-slate-800 text-dark dark:text-white">
-    <div class="container py-5">
-      <h2 class="mb-8 text-4xl font-extrabold">Sıkça Sorulan Sorular</h2>
-      <div class="row border-top pt-4">
-        <div class="col-md-6 mb-4">
-          <div class="mb-3">
-            <h3 class="d-flex align-items-center mb-3 text-lg font-medium">
-              <span class="material-symbols-outlined me-2 text-secondary">help</span>
-              Bayiler nasıl başvuru yapabilir?
-            </h3>
-            <p class="text-muted">
-              Bayiler başvurularını Analiz Yayıncılık resmi web sitesindeki başvuru formunu doldurarak yapabilirler.
-              Ayrıca, info@analizyayin.com.tr adresine e-posta göndererek veya 0850 305 5405 numaralı telefonu
-              arayarak başvurularını iletebilirler.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6 mb-4">
-          <div class="mb-3">
-            <h3 class="d-flex align-items-center mb-3 text-lg font-medium">
-              <span class="material-symbols-outlined me-2 text-secondary">description</span>
-              Bayilik için gerekli belgeler nelerdir?
-            </h3>
-            <p class="text-muted">
-              Bayilik başvurusu için gerekli belgeler arasında kimlik fotokopisi, vergi levhası, sicil gazetesi,
-              işyeri ruhsatı ve bayilik sözleşmesi yer almaktadır.
-              Bu belgelerin tamamının eksiksiz olarak sunulması gerekmektedir. Bu belgelere ek belgeler istenebilir.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6 mb-4">
-          <div class="mb-3">
-            <h3 class="d-flex align-items-center mb-3 text-lg font-medium">
-              <span class="material-symbols-outlined me-2 text-secondary">check_circle</span>
-              Bayilik başvurusu nasıl değerlendirilir?
-            </h3>
-            <p class="text-muted">
-              Bayilik başvuruları, başvuru formunda yer alan bilgiler ve gerekli belgelerin incelenmesi sonucunda
-              değerlendirilir.
-              Başvuru sahibinin iş tecrübesi, finansal durumu ve uygunluk kriterlerine göre başvurular kabul edilir
-              veya reddedilir.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6 mb-4">
-          <div class="mb-3">
-            <h3 class="d-flex align-items-center mb-3 text-lg font-medium">
-              <span class="material-symbols-outlined me-2 text-secondary">schedule</span>
-              Bayilik süreci ne kadar sürer?
-            </h3>
-            <p class="text-muted">
-              Bayilik başvurusunun sonuçlanma süresi başvuru sahibinin sağladığı bilgi ve belgelerin
-              değerlendirilmesi, inceleme süreci ve sözleşme hazırlık aşamasına bağlı olarak değişebilir.
-              Ortalama olarak, başvurudan sonuç alınması 2-4 hafta arasında sürebilir.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6 mb-4">
-          <div class="mb-3">
-            <h3 class="d-flex align-items-center mb-3 text-lg font-medium">
-              <span class="material-symbols-outlined me-2 text-secondary">gavel</span>
-              Bayilik şartları nelerdir?
-            </h3>
-            <p class="text-muted">
-              Bayilik şartları bayilik başvurusu yapacak olan kişinin iş deneyimi, finansal durumu, işyeri uygunluğu
-              gibi faktörlere bağlı olarak değişebilir.
-              Analiz Yayıncılık bayilik şartlarını karşılayan adaylar, başvurularını yapabilir ve değerlendirmeye
-              alınabilir.
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
-<style>
-  #faq svg {
-    width: 30px;
-    height: 30px;
-  }
-</style>
+  </section>
+  <style>
+    #faq svg {
+      width: 30px;
+      height: 30px;
+    }
+  </style>
 
 {% endblock %}
