@@ -10,15 +10,7 @@
 
   <div id="root"></div>
 
-  <script type="application/json" id="data-json">
-      {{ data|safe }}
-
-
-
-
-
-
-  </script>
+  <script type="application/json" id="data-json">{{ data|safe }}</script>
 
   <script type="text/babel" data-presets="react,stage-3">
     const App = () => {
@@ -100,13 +92,12 @@
               <div className="row">
                 {filteredProducts.map(product => (
                   <div className="col-md-4 mb-4" key={product.id}>
-                    <div className="card h-100">
+                    <a className="card h-100" href={`/urunler/${product.id}`}>
                       <img src={product.image} className="card-img-top" alt={product.title}/>
                       <div className="card-body text-center">
                         <h5 className="card-title">{product.title}</h5>
-                        <p className="card-text">{product.content}</p>
                       </div>
-                    </div>
+                    </a>
                   </div>
                 ))}
               </div>

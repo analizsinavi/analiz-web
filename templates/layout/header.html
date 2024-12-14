@@ -92,25 +92,25 @@
       </div>
     </div>
   </nav>
+  <script>
+    const toggleTheme = () => {
+      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-bs-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+
+      // Update the icon
+      const btnSwitch = document.getElementById('btnSwitch');
+      btnSwitch.textContent = newTheme === 'dark' ? 'light_mode' : 'dark_mode';
+    };
+
+    // Initialize theme and icon on page load
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    document.getElementById('btnSwitch').textContent = savedTheme === 'dark' ? 'light_mode' : 'dark_mode';
+
+    // Add event listener to the button
+    document.getElementById('btnSwitch').addEventListener('click', toggleTheme);
+  </script>
 </header>
 
-<script>
-  const toggleTheme = () => {
-    const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-bs-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-
-    // Update the icon
-    const btnSwitch = document.getElementById('btnSwitch');
-    btnSwitch.textContent = newTheme === 'dark' ? 'light_mode' : 'dark_mode';
-  };
-
-  // Initialize theme and icon on page load
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  document.documentElement.setAttribute('data-bs-theme', savedTheme);
-  document.getElementById('btnSwitch').textContent = savedTheme === 'dark' ? 'light_mode' : 'dark_mode';
-
-  // Add event listener to the button
-  document.getElementById('btnSwitch').addEventListener('click', toggleTheme);
-</script>

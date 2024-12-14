@@ -9,6 +9,8 @@ def fetch_urunler():
         "Baslik": "Ürün Başlığı Yok",
         "Icerik": "Ürün İçeriği Yok",
         "Gorsel": "https://placehold.co/150",
+        "LinkSatinAlma": "",
+        "LinkOrnekSayfa": "",
         "Yeni": 0,
         "Populer": 0,
     })
@@ -23,6 +25,8 @@ def fetch_urunler_yeni():
         "Baslik": "Ürün Başlığı Yok",
         "Icerik": "Ürün İçeriği Yok",
         "Gorsel": "https://placehold.co/150",
+        "LinkSatinAlma": "",
+        "LinkOrnekSayfa": "",
         "Yeni": 0,
         "Populer": 0,
     })
@@ -37,11 +41,21 @@ def fetch_urunler_populer():
         "Baslik": "Ürün Başlığı Yok",
         "Icerik": "Ürün İçeriği Yok",
         "Gorsel": "https://placehold.co/150",
+        "LinkSatinAlma": "",
+        "LinkOrnekSayfa": "",
         "Yeni": 0,
         "Populer": 0,
     })
 
     return urunler.to_dict(orient='records')
+
+
+def fetch_urun(urunId):
+    urunler = fetch_urunler()
+    for urun in urunler:
+        if int(urun["UrunId"]) == urunId:
+            return urun
+    return None
 
 
 def fetch_siniflar():
@@ -81,7 +95,7 @@ def fetch_duyurular_yeni():
     duyurular = duyurular.sort_values(by='Tarih', ascending=False)
 
     # Select the first 4 rows
-    duyurular = duyurular.head(4)
+    duyurular = duyurular.head(3)
 
     return duyurular.to_dict(orient='records')
 

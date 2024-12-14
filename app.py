@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, abort
 import data
 import locale
 import json
@@ -75,6 +75,22 @@ def urunler():
     )
 
 
+@app.route("/urunler/<urunId>")
+def urunler_detay(urunId):
+    urun = data.fetch_urun(urunId)
+
+    if not urun:
+        abort(404)  # Return a 404 if the product is not found
+
+    print('urunId')
+    print(urunId)
+    print(urun)
+    return render_template(
+        "urunler-detay.html",
+        urun=urun
+    )
+
+
 @app.route("/duyurular")
 def duyurular():
     duyurular = data.fetch_duyurular()
@@ -101,3 +117,7 @@ def seo_robots():
 @app.route('/manifest.json')
 def seo_manifest():
     return render_template('manifest.json')
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
