@@ -7,63 +7,30 @@
         <p class="text-muted mt-3"></p>
       </div>
       <div class="row g-4">
-        <!-- Duyuru 1 -->
-        <div class="col-md-4">
-          <div class="card bg-white rounded shadow-sm">
-            <img src="https://image.pixelperfect.tr/upload/q_90,c_1,o_avif,w_600,h_400/https://place-hold.it/400x400"
-                 class="card-img-top rounded-top" alt="What are the news aaa">
-            <div class="card-body">
-              <h5 class="card-title"></h5>
-              <p class="card-text text-muted">What are the news aaa</p>
-              <a href="/blog/what-are-the-news-6"
-                 class="btn btn-primary d-flex align-items-center justify-content-center gap-2">
-                Devamı
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="w-4 h-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
-                </svg>
-              </a>
+        {% for duyuru in duyurular_yeni %}
+          <div class="col-md-4">
+            <div class="card bg-white rounded shadow-sm">
+              <img
+                src="{{ duyuru.Gosel }}"
+                class="card-img-top rounded-top"
+                alt="{{ duyuru.Baslik }}"
+              >
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text text-muted">{{ duyuru.Baslik }}</p>
+                <a href="/duyuru/{{ duyuru.Slug }}"
+                   class="btn btn-primary d-flex align-items-center justify-content-center gap-2"
+                >
+                  Devamı
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                       stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- Duyuru 2 -->
-        <div class="col-md-4">
-          <div class="card bg-white rounded shadow-sm">
-            <img src="https://image.pixelperfect.tr/upload/q_90,c_1,o_avif,w_600,h_400/https://place-hold.it/400x400"
-                 class="card-img-top rounded-top" alt="What are the news">
-            <div class="card-body">
-              <h5 class="card-title"></h5>
-              <p class="card-text text-muted">What are the news</p>
-              <a href="/blog/what-are-the-news-2"
-                 class="btn btn-primary d-flex align-items-center justify-content-center gap-2">
-                Devamı
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="w-4 h-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Duyuru 3 -->
-        <div class="col-md-4">
-          <div class="card bg-white rounded shadow-sm">
-            <img src="https://image.pixelperfect.tr/upload/q_90,c_1,o_avif,w_600,h_400/https://place-hold.it/400x400"
-                 class="card-img-top rounded-top" alt="What are the news">
-            <div class="card-body">
-              <h5 class="card-title"></h5>
-              <p class="card-text text-muted">What are the news</p>
-              <a href="/blog/what-are-the-news-3"
-                 class="btn btn-primary d-flex align-items-center justify-content-center gap-2">
-                Devamı
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="w-4 h-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>

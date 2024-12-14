@@ -27,7 +27,16 @@ def notfound(e):
 @app.route("/")
 def home():
     slidelar = data.fetch_slidelar()
-    return render_template("index.html", slidelar=slidelar)
+    urunler_yeni = data.fetch_urunler_yeni()
+    urunler_populer = data.fetch_urunler_populer()
+    duyurular_yeni = data.fetch_duyurular_yeni()
+    return render_template(
+        "index.html",
+        slidelar=slidelar,
+        urunler_yeni=urunler_yeni,
+        urunler_populer=urunler_populer,
+        duyurular_yeni=duyurular_yeni
+    )
 
 
 @app.route("/iletisim")

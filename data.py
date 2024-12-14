@@ -5,7 +5,34 @@ file_path = './data.xlsx'
 
 def fetch_urunler():
     urunler = pd.read_excel(file_path, sheet_name="Urun")
+    urunler = urunler.fillna({
+        "Baslik": "Ürün Başlığı Yok",
+        "Icerik": "Ürün İçeriği Yok",
+        "Gorsel": "https://placehold.co/150",
+        "Yeni": 0,
+        "Populer": 0,
+    })
 
+    return urunler.to_dict(orient='records')
+
+
+def fetch_urunler_yeni():
+    urunler = pd.read_excel(file_path, sheet_name="Urun")
+    urunler = urunler[urunler["Yeni"] == 1]
+    urunler = urunler.fillna({
+        "Baslik": "Ürün Başlığı Yok",
+        "Icerik": "Ürün İçeriği Yok",
+        "Gorsel": "https://placehold.co/150",
+        "Yeni": 0,
+        "Populer": 0,
+    })
+
+    return urunler.to_dict(orient='records')
+
+
+def fetch_urunler_populer():
+    urunler = pd.read_excel(file_path, sheet_name="Urun")
+    urunler = urunler[urunler["Populer"] == 1]
     urunler = urunler.fillna({
         "Baslik": "Ürün Başlığı Yok",
         "Icerik": "Ürün İçeriği Yok",
@@ -36,9 +63,27 @@ def fetch_kategoriler():
 
 
 def fetch_duyurular():
-    duyuru = pd.read_excel(file_path, sheet_name="Duyuru")
-    print(duyuru)
-    return duyuru.to_dict(orient='records')
+    duyurular = pd.read_excel(file_path, sheet_name="Duyuru")
+    print(duyurular)
+    return duyurular.to_dict(orient='records')
+
+
+def fetch_duyurular_yeni():
+    duyurular = pd.read_excel(file_path, sheet_name="Duyuru")
+
+    # Ensure the 'Tarih' column is properly parsed as a datetime type
+    duyurular['Tarih'] = pd.to_datetime(duyurular['Tarih'], errors='coerce')
+
+    # Drop rows where 'Tarih' is NaT (not a valid datetime)
+    duyurular = duyurular.dropna(subset=['Tarih'])
+
+    # Sort by 'Tarih' in descending order (latest first)
+    duyurular = duyurular.sort_values(by='Tarih', ascending=False)
+
+    # Select the first 4 rows
+    duyurular = duyurular.head(4)
+
+    return duyurular.to_dict(orient='records')
 
 
 def fetch_bayiler():

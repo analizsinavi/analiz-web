@@ -31,7 +31,8 @@
   </section>
 
   {% include 'component/property.html' %}
-  {% include 'component/product-list-horizontal.html' %}
-  {% include 'component/announcement-list-horizontal.html' %}
+  {% include 'component/product-list-horizontal-new.html' with context %}
+  {% include 'component/product-list-horizontal-populer.html' with context %}
+  {% include 'component/announcement-list-horizontal.html' with context %}
 
 {% endblock %}
