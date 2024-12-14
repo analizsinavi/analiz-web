@@ -90,3 +90,7 @@ footer .container {
 .card-body {
   min-height: 150px;
 }
+
+footer {
+  background: #f4f4f4;
+}
