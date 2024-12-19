@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://www.analizyayinlari.com.tr/sitemap.xml
+Sitemap: https://www.analizyayin.com.tr/sitemap.xml
