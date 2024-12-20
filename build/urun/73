@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset='utf-8'/>
+  <base href="/" target="_self">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BİLSEM NE İSTEDİĞİNİ BİLEN PAKET 1 (HAZIRLIK KİTABI+PAKET DENEME) </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+  <link rel="stylesheet" href="/static/style.css">
+  <title>Analiz Yayınları - Türkiye&apos;nin Önde Gelen Kitap Yayınevi | Analiz Yayınları</title>
+  <meta name="title" content="Analiz Yayınları - Türkiye&apos;nin Önde Gelen Kitap Yayınevi | Analiz Yayınları"/>
+  <meta name="description"
+        content="Analiz Yayınları, Türkiye&apos;de kitap yayıncılığı alanında öncü ve güvenilir bir markadır. Geniş kategorilerdeki kitaplardan akademik yayınlara kadar birçok seçenek sunan Analiz Yayınları, yüzlerce yazarın eserlerini okurlarla buluşturmak için çalışmaktadır."/>
+  <link rel="canonical" href="https://www.analizyayinlari.com.tr/"/>
+  <meta name="robots" content="index,follow"/>
+  <meta property="twitter:title"
+        content="Analiz Yayınları - Türkiye&apos;nin Önde Gelen Kitap Yayınevi | Analiz Yayınları"/>
+  <meta property="twitter:description"
+        content="Analiz Yayınları, Türkiye&apos;de kitap yayıncılığı alanında öncü ve güvenilir bir markadır. Geniş kategorilerdeki kitaplardan akademik yayınlara kadar birçok seçenek sunan Analiz Yayınları, yüzlerce yazarın eserlerini okurlarla buluşturmak için çalışmaktadır."/>
+  <meta property="og:title" content="Analiz Yayınları - Türkiye&apos;nin Önde Gelen Kitap Yayınevi | Analiz Yayınları"/>
+  <meta property="og:description"
+        content="Analiz Yayınları, Türkiye&apos;de kitap yayıncılığı alanında öncü ve güvenilir bir markadır. Geniş kategorilerdeki kitaplardan akademik yayınlara kadar birçok seçenek sunan Analiz Yayınları, yüzlerce yazarın eserlerini okurlarla buluşturmak için çalışmaktadır."/>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "url": "https://www.analizyayinlari.com.tr",
+          "name": "Analiz Yayınları",
+          "logo": "https://doneweb.s3.eu-central-1.amazonaws.com/project/project-7/logo-light.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "0850 305 5405",
+            "contactType": "Müşteri Hizmetleri",
+            "areaServed": "TR",
+            "availableLanguage": [
+              "Turkish"
+            ]
+          },
+          "sameAs": [
+            "https://www.facebook.com/AnalizYayinlari",
+            "https://www.instagram.com/AnalizYayinlari",
+            "https://www.twitter.com/AnalizYayinlari"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "url": "https://www.analizyayinlari.com.tr",
+          "name": "Analiz Yayınları",
+          "description": "Türkiye'nin önde gelen kitap yayınevi. Bilsem hazırlık kitapları, soru bankaları, yardımcı kaynaklar ve hikaye setleri sunmaktadır.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Analiz Yayınları",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://doneweb.s3.eu-central-1.amazonaws.com/project/project-7/logo-light.png"
+            }
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.analizyayinlari.com.tr/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.analizyayinlari.com.tr/#webpage",
+          "url": "https://www.analizyayinlari.com.tr/",
+          "name": "Analiz Yayınları - Türkiye'nin Önde Gelen Kitap Yayınları",
+          "description": "Analiz Yayınları web sitesi, kullanıcılar için kitaplar, çerez politikası ve müşteri hizmetleri gibi birçok bilgi sunar.",
+          "inLanguage": "tr",
+          "isPartOf": {
+            "@type": "WebSite",
+            "url": "https://www.analizyayinlari.com.tr"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "name": "Sıkça Sorulan Sorular",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Çerez Nedir?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Çerezler, web siteleri tarafından kullanıcı deneyimini iyileştirmek ve sitenin daha etkili çalışmasını sağlamak için kullanılan küçük metin dosyalarıdır."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Hangi Çerez Türleri Kullanılıyor?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Web sitemizde oturum çerezleri, tercihler çerezleri ve analiz çerezleri gibi çeşitli çerez türleri kullanılmaktadır."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Çerezleri Nasıl Kontrol Edebilirim?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Çerezleri tarayıcı ayarlarınızdan kontrol edebilir, kabul edebilir veya reddedebilirsiniz."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.analizyayinlari.com.tr/cerez-politikasi",
+          "url": "https://www.analizyayinlari.com.tr/cerez-politikasi",
+          "name": "Çerez Politikası",
+          "description": "Analiz Yayınları çerez politikası hakkında detaylı bilgi alın."
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.analizyayinlari.com.tr/gizlilik-sozlesmesi",
+          "url": "https://www.analizyayinlari.com.tr/gizlilik-sozlesmesi",
+          "name": "Gizlilik Sözleşmesi",
+          "description": "Analiz Yayınları'nın kullanıcı gizliliği ve veri güvenliği politikası."
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.analizyayinlari.com.tr/kullanim-sartlari",
+          "url": "https://www.analizyayinlari.com.tr/kullanim-sartlari",
+          "name": "Kullanım Şartları",
+          "description": "Analiz Yayınları web sitesinin kullanım şartları ve koşulları."
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.analizyayinlari.com.tr/iletisim",
+          "url": "https://www.analizyayinlari.com.tr/iletisim",
+          "name": "İletişim",
+          "description": "Analiz Yayınları ile iletişim kurun. Adres ve telefon bilgileri ile sorularınızı yanıtlıyoruz."
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.analizyayinlari.com.tr/hakkimizda",
+          "url": "https://www.analizyayinlari.com.tr/hakkimizda",
+          "name": "Hakkımızda",
+          "description": "Analiz Yayınları hakkında bilgi edinin. Misyonumuz, vizyonumuz ve değerlerimiz."
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.analizyayinlari.com.tr/urunler",
+          "url": "https://www.analizyayinlari.com.tr/urunler",
+          "name": "Ürünler",
+          "description": "Analiz Yayınları'nın sunduğu kitaplar, kaynaklar ve eğitim materyalleri."
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.analizyayinlari.com.tr/bayiler",
+          "url": "https://www.analizyayinlari.com.tr/bayiler",
+          "name": "Bayiler",
+          "description": "Analiz Yayınları bayilik programı hakkında bilgi alın ve iş ortağı olun."
+        }
+      ]
+    }
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name='msapplication-TileColor' content='#000'>
+  <meta name='theme-color' content='#000'/>
+  <link rel='icon' href='https://doneweb.s3.eu-central-1.amazonaws.com/project/project-7/favicon.ico'/>
+  <link rel='mask-icon' href='https://doneweb.s3.eu-central-1.amazonaws.com/project/project-7/favicon.ico' color='#000'>
+  <link rel='apple-touch-icon' href='https://doneweb.s3.eu-central-1.amazonaws.com/project/project-7/logo-light.png'/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Analiz Yayınları">
+  <link rel="apple-touch-startup-image"
+        href="https://doneweb.s3.eu-central-1.amazonaws.com/project/project-7/logo-light.png">
+  <link rel='manifest' href='/manifest.json'/>
+</head>
+
+<body>
+<header>
+  <div class="nav-top container">
+    <a href="tel:0850 305 5405">
+      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+           class="inline-block text-xl" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path fill="none" d="M0 0h24v24H0V0z"></path>
+        <path
+          d="M6.54 5c.06.89.21 1.76.45 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79h1.51m9.86 12.02c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75l1.2-1.19M7.5 3H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.49c0-.55-.45-1-1-1-1.24 0-2.45-.2-3.57-.57a.84.84 0 00-.31-.05c-.26 0-.51.1-.71.29l-2.2 2.2a15.149 15.149 0 01-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1z"></path>
+      </svg>
+      0850 305 5405
+    </a>
+    <a href="mailto:info@analizyayin.com.tr">
+      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+           class="inline-block text-xl" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path fill="none" d="M0 0h24v24H0V0z"></path>
+        <path
+          d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 4.99L4 6h16zm0 12H4V8l8 5 8-5v10z"></path>
+      </svg>
+      info@analizyayin.com.tr
+    </a>
+
+    <span style="flex: 1"></span>
+
+    <a href="https://www.youtube.com/@AnalizYaynlarResmi" target="_blank" aria-label="YouTube">
+      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512"
+           height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path>
+      </svg>
+    </a>
+    <a href="https://www.facebook.com/analizyay" target="_blank" aria-label="Facebook">
+      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+           height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
+      </svg>
+    </a>
+    <a href="https://www.instagram.com/analiz_yayinlari/" target="_blank" aria-label="Instagram">
+      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512"
+           height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+      </svg>
+    </a>
+
+    <!--
+    <span id="btnSwitch" class="material-symbols-outlined">dark_mode</span>
+    -->
+  </div>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img class="logo" src="/static/logo.svg" alt="Analiz Yayınları">
+      </a>
+      <button
+        class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/urunler">Ürünlerimiz</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.analiz-satis.com/" target="_blank">Online Satış</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://analizsinavi.com/" target="_blank">Sınav Sonuçları</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/e-kitap">E-Kitap</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/bayiler">Bayilerimiz</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/hakkimizda">Hakkımızda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/duyurular">Duyurular</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/iletisim">İletişim</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <script>
+    const toggleTheme = () => {
+      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-bs-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+
+      // Update the icon
+      const btnSwitch = document.getElementById('btnSwitch');
+      btnSwitch.textContent = newTheme === 'dark' ? 'light_mode' : 'dark_mode';
+    };
+
+    // Initialize theme and icon on page load
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    document.getElementById('btnSwitch').textContent = savedTheme === 'dark' ? 'light_mode' : 'dark_mode';
+
+    // Add event listener to the button
+    document.getElementById('btnSwitch').addEventListener('click', toggleTheme);
+  </script>
+</header>
+
+<main>
+  
+  <div class="container my-5">
+    <div class="row">
+
+      <!-- Carousel Section -->
+      <div class="col-md-6">
+        <img src=" https://doneweb.s3.eu-central-1.amazonaws.com/project/project-7/product/neistediğinibilen1.jpg" alt="BİLSEM NE İSTEDİĞİNİ BİLEN PAKET 1 (HAZIRLIK KİTABI+PAKET DENEME) " class="w-100" style="background: #f4f4f4">
+      </div>
+
+      <!-- Product Details Section -->
+      <div class="col-md-6">
+        <h1 class="mb-4">BİLSEM NE İSTEDİĞİNİ BİLEN PAKET 1 (HAZIRLIK KİTABI+PAKET DENEME) </h1>
+        <div class="d-flex justify-content-start align-items-center mb-4">
+          
+          
+          <a href="https://www.analizogretmen.com/" class="btn btn-outline-dark d-flex align-items-center">
+            <i class="bi bi-tv me-2"></i> Akıllı Tahta Uygulaması
+          </a>
+        </div>
+        <p class="text-secondary">
+          
+        </p>
+      </div>
+    </div>
+  </div>
+
+</main>
+<footer>
+  <section class="dark:bg-dark dark:text-white">
+    <div class="container">
+      <div class="row w-100">
+
+        <div class="col col-12 col-md-6" style="padding: 24px 0;">
+          <a href="/" style="display: block; margin-bottom: 16px;">
+            <img
+              class="logo"
+              src="https://doneweb.s3.eu-central-1.amazonaws.com/project/project-7/logo-light.png"
+              alt="Analiz Yayınları"
+              style="height: 60px;"
+            >
+          </a>
+          <p style="margin: 0; line-height: 1.5;">
+            Analiz Yayıncılık, İvedik Osb Mah, 2284. Sk. No:138, 06000 Yenimahalle / Ankara<br>
+            0850 305 5405<br>
+            <a href="mailto:info@analizyayin.com.tr" style="color: inherit; text-decoration: none;">info@analizyayin.com.tr</a>
+          </p>
+        </div>
+
+        <div class="col col-6 col-md-3" style="padding: 24px 0;">
+          <h4 style="font-weight: 500; margin-bottom: 16px;">Kurumsal</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="/urunlerimiz" style="text-decoration: none; color: inherit;">Ürünlerimiz</a></li>
+            <li><a href="/iletisim" style="text-decoration: none; color: inherit;">İletişim</a></li>
+            <li><a href="/hakkimizda" style="text-decoration: none; color: inherit;">Hakkımızda</a></li>
+            <li><a href="/bayiler" style="text-decoration: none; color: inherit;">Bayilerimiz</a></li>
+          </ul>
+        </div>
+
+        <div class="col col-6 col-md-3" style="padding: 24px 0;">
+          <h4 style="font-weight: 500; margin-bottom: 16px;">Uygulamalar</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li>
+              <a href="https://analizogretmen.com/" style="text-decoration: none; color: inherit;">Analiz Öğretmen</a>
+            </li>
+            <li>
+              <a
+                href="https://play.google.com/store/apps/details?id=air.com.fernus.mobilelibrary.analiz&amp;hl=en_US&amp;pli=1"
+                style="text-decoration: none; color: inherit;">Analiz Kütüphane (Android)</a>
+            </li>
+            <li>
+              <a href="https://apps.apple.com/ng/app/analiz-mobil-k%C3%BCt%C3%BCphane/id1632607207"
+                 style="text-decoration: none; color: inherit;">Analiz Kütüphane (iOS)</a>
+            </li>
+            <li>
+              <a
+                href="https://play.google.com/store/apps/details?id=air.com.fernus.vectorvideo.analiz&amp;hl=tr&amp;gl=US"
+                style="text-decoration: none; color: inherit;">Video'lu Çözümler (Android)</a>
+            </li>
+            <li>
+              <a href="https://apps.apple.com/mn/app/analiz-video-%C3%A7%C3%B6z%C3%BCm/id1469341210"
+                 style="text-decoration: none; color: inherit;">Video'lu Çözümler (iOS)</a>
+            </li>
+            <li>
+              <a href="https://play.google.com/store/apps/details?id=com.fernus.analiz.optikokuma&amp;hl=tr"
+                 style="text-decoration: none; color: inherit;">Optik Okuma (Android)</a>
+            </li>
+            <li>
+              <a href="https://apps.apple.com/tr/app/analiz-optik-okuma/id1488247564"
+                 style="text-decoration: none; color: inherit;">Optik Okuma (iOS)</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark:bg-dark dark:text-white" style="background: #d0d0d0">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 16px 0;">
+        <span>&copy; 2024 Analiz Yayınları</span>
+        <div style="display: flex; gap: 16px;">
+          <a href="/gizlilik-sozlesmesi" style="text-decoration: none; color: inherit;">Gizlilik Sözleşmesi</a>
+          <a href="/cerez-politikasi" style="text-decoration: none; color: inherit;">Çerez Politikası</a>
+          <a href="/kullanim-sartlari" style="text-decoration: none; color: inherit;">Kullanım Şartları</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.10.3/babel.min.js" crossorigin></script>
+</body>
+</html>
